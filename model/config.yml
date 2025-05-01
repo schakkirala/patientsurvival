@@ -1,0 +1,47 @@
+# Data Files
+# This file contains configurations and setting paramters are stored here , read by core.py
+training_data_file: heart_failure_clinical_records_dataset.csv
+# test_data_file: test.csv
+
+# Variables
+# The variable we are attempting to predict (DEATH_EVENT)
+target: DEATH_EVENT
+
+pipeline_name: patientsurvival_model
+pipeline_save_file: patientsurvival_model_output_v
+
+features:      # final features to be use
+  - creatinine_phosphokinesis
+  - ejection_fraction
+  - serum_creatinine 
+  - serum_sodium 
+
+unused_fields:  # Features to drop before pipeline
+  - anaemia 
+  - diabetes 
+  - platelets 
+  - sex 
+  - smoking 
+  - time 
+
+# Features inside processing pipeline
+survival_var: DEATH_EVENT # first imputatation , then --> Mappeing
+  
+gender_var: Sex
+
+age_var: Age 
+
+gender_mappings:
+  female: 0
+  male: 1
+
+  
+# set train/test split
+test_size: 0.3
+
+# to set the random seed
+random_state: 42
+# alogrithm parameters
+n_estimators: 200
+max_depth: 4
+max_leaves: 5
