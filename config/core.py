@@ -12,7 +12,7 @@ from strictyaml import YAML, load
 import titanic_model
 
 # Project Directories
-PACKAGE_ROOT = Path(titanic_model.__file__).resolve().parent
+PACKAGE_ROOT = Path(patientsurvival_model.__file__).resolve().parent
 #print(PACKAGE_ROOT)
 ROOT = PACKAGE_ROOT.parent
 CONFIG_FILE_PATH = PACKAGE_ROOT / "config.yml"
